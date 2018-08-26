@@ -1,7 +1,7 @@
 <?php
 /**
- * @author  Pierre-Alexandre RACINE <pierrealexandreracine at{@} gmail dot[.] com>
- * @copyright Pierre-Alexandre RACINE <pierrealexandreracine at{@} gmail dot[.] com>
+ * @author  Pierre-Alexandre RACINE <patcha.dev at{@} gmail dot[.] com>
+ * @copyright Pierre-Alexandre RACINE <patcha.dev at{@} gmail dot[.] com>
  * @license http://www.cecill.info/licences/Licence_CeCILL-C_V1-fr.html LICENCE DE LOGICIEL LIBRE CeCILL-C
  * @date 03/08/18 22:38
  *
@@ -55,7 +55,7 @@ class ModeleUpload extends ModeleAbstrait implements IModele
                 array_push(
                     $this->listeTranscriptions,
                     new FichierTranscription(
-                        '/uploads/transcriptions/' . $this->nettoyerNomFichier($infosFichier['name'])),
+                        getcwd() . '/uploads/transcriptions/' . $this->nettoyerNomFichier($infosFichier['name'])),
                     $this->souhaitFormatSortie
                     );
             }
@@ -122,7 +122,7 @@ class ModeleUpload extends ModeleAbstrait implements IModele
                 }
                 else
                 {
-                    $this->erreurs .= 'extractionZipImpossible';
+                    array_push($this->erreurs, 'extractionZipImpossible');
                 }
                 $zip->close();
                 break;

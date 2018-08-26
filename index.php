@@ -1,7 +1,7 @@
 <?php
 /**
- * @author  Pierre-Alexandre RACINE <pierrealexandreracine at{@} gmail dot[.] com>
- * @copyright Pierre-Alexandre RACINE <pierrealexandreracine at{@} gmail dot[.] com>
+ * @author  Pierre-Alexandre RACINE <patcha.dev at{@} gmail dot[.] com>
+ * @copyright Pierre-Alexandre RACINE <patcha.dev at{@} gmail dot[.] com>
  * @license http://www.cecill.info/licences/Licence_CeCILL-C_V1-fr.html LICENCE DE LOGICIEL LIBRE CeCILL-C
  *
  * Contrôleur principal de l'application
