@@ -19,9 +19,9 @@ error_reporting(E_ALL);
  */
 class ControleurAccueil
 {
-    private $erreurs='';
+    private $erreurs=array();
 
-    private $alertes ='';
+    private $alertes =array();
 
     /**
      * ControleurAccueil constructor. En fonction du contexte qui appellera le constructeur, on dirigera vers une vue
@@ -41,12 +41,21 @@ class ControleurAccueil
         {
             case 'envoiFichier':
                 $transcriptions = array();
+                // IMPORT
                 if( isset($_POST['formatSortie']) )
                 {
                     require_once $_SERVER['DOCUMENT_ROOT'] . '/transcriptionConverter/modele/modele_ModeleUpload.class.php';
                     $donnees = new ModeleUpload($_POST['formatSortie']);
                     $transcriptions = $donnees->getListeTranscriptions();
                 }
+
+                // EXPORT
+                require_once $_SERVER['DOCUMENT_ROOT'] . '/transcriptionConverter/modele/mode/tour/modele_mode_tour_ExportTranscriptionTRS.class.php';
+                foreach ($transcriptions as $transcription)
+                {
+
+                }
+
 
                 require_once $_SERVER['DOCUMENT_ROOT'] . '/transcriptionConverter/vue/vue_VueVerificationFichier.class.php';
                 $vue = new VueVerificationFichier();

@@ -3,7 +3,7 @@
  * @author  Pierre-Alexandre RACINE <patcha.dev at{@} gmail dot[.] com>
  * @copyright Pierre-Alexandre RACINE <patcha.dev at{@} gmail dot[.] com>
  * @license http://www.cecill.info/licences/Licence_CeCILL-C_V1-fr.html LICENCE DE LOGICIEL LIBRE CeCILL-C
- * @date 25/08/18 22:51
+ * @date 03/09/18 18:26
  *
  * Contexte : TODO
  *
@@ -14,12 +14,10 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+require_once $_SERVER['DOCUMENT_ROOT'] . '/transcriptionConverter/modele/modele_ModeleAbstrait.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/transcriptionConverter/modele/modele_IModele.class.php';
 
-interface Transcription
+class ExportTRS extends ModeleAbstrait implements IModele
 {
-    function recupererEncodage();
-    function importer();
-    function getListeTours();
-    function getListeTiers();
 
 }

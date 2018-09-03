@@ -449,5 +449,23 @@ class ImportTranscriptionTRS extends ModeleAbstrait implements IModele, Transcri
         }
     }
 
+    /**
+     * @return array
+     */
+    public function getListeTours(): array
+    {
+        return $this->listeTours;
+    }
+
+    /**
+     * @return array
+     */
+    public function getListeTiers(): array
+    {
+        return array();
+    }
+
+
+
 
 }

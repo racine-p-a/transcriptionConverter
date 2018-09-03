@@ -55,8 +55,9 @@ class ModeleUpload extends ModeleAbstrait implements IModele
                 array_push(
                     $this->listeTranscriptions,
                     new FichierTranscription(
-                        getcwd() . '/uploads/transcriptions/' . $this->nettoyerNomFichier($infosFichier['name'])),
-                    $this->souhaitFormatSortie
+                        getcwd() . '/uploads/transcriptions/' . $this->nettoyerNomFichier($infosFichier['name']),
+                        $this->souhaitFormatSortie
+                        )
                     );
             }
             // UNE ARCHIVE

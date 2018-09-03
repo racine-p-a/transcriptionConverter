@@ -55,6 +55,8 @@ class FichierTranscription extends ModeleAbstrait implements IModele
             case 'trs':
                 require_once $_SERVER['DOCUMENT_ROOT'] . '/transcriptionConverter/modele/mode/tour/modele_mode_tour_ImportTranscriptionTRS.class.php';
                 $import = new ImportTranscriptionTRS($this->dossierFichier . '/' . $this->nomFichier);
+                $this->listeTours = $import->getListeTours();
+                $this->listeTiers = $import->getListeTiers();
                 break;
             case '':
             default:
